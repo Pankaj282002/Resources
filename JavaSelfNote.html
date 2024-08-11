@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<head>
+	<title> Java Self Notes</title>
+<style>
+table, th, td{
+border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<center><h1> Chapter 1 :- Data Types and Variables. </h1></center>
+
+<hr>
+<h2>Java Is a Strongly Typed Language</h2>
+
+<p>
+Java is strongly typed language. Indeed, part of Java’s safety and robustness comes from this fact. Let’s see what this means. First, every variable has a type, every expression has a type, and every type is strictly defined. Second, all assignments, whether explicit or via parameter passing in method calls, are checked for type compativlity. There are no automatic coercions or conversion of conflicting types as in some languages. The Java compiler checks all expressions and parameters and parameters to ensure that the types are compativle. Any type mismatches are errors that must  be corrected before the compiler will finish compiling the class.
+</p>
+
+<h2>Data Types in Java</h3>
+<hr>
+
+<ol>
+	<li><strong>Primitive data types.</strong></li>
+	<li><strong>Non-primitive data types.</strong></li>
+</ol>
+
+<h2>Primitive Data Type</h3>
+<hr>
+
+<p>
+Java defines eight <i>primitive </i> types of data : <b> byte, short, int, long, char, float, double, </b> and <b> boolean. </b>The primitive types are also commonly referred to as <i>simple</i> types.
+</p>
+
+<ul>
+	<li><b> Integers :- </b>This group includes <b>byte, short, int, </b> and <b>long,</b> which are for whole-vlaued signed numbers.</li>
+	<li><b> Floating-point numbers :- </b>This group includes <b>float</b> and <b> double,</b>which represent numbers with fractinal precision.</li>
+	<li><b> Characters :- </b>This group includes <b>char,</b> which represents symbols in a character set, like letters and numbers.</li>
+	<li><b> Boolean :- </b>This group includes <b>boolean,</b> which represents symbols in a character set, like letters and numbers.</li>
+</ul>
+
+<p>You can use these types as-is, or to construct arrays or your own class types. Thus, they form the basic for all other types of data that you can create.</p>
+
+<p><mark><b><abbr title="Java is pure object oriented or not and why ? ">The primitive types represent single values-not complex objects. Although Java is otherwise completely object-oriented, the primitive types are not. They are analogous to the simple types found in most other non-objected languages. The reason for this is efficiency. Making the primitive types into objects would have degraded performance too much.</mark></b></abbr></p>
+
+<h3><strong>Integers</strong><br></h3><hr>
+<p>
+Java defines four integer types: byte, short, int, and long. All of these are signed, positive and negative values. The width of an integer type should not be thought of as the amount of storage it 
+consumes, but rather as the behavior it defines for variables and expressions of that type. </br>
+The Java run-time environment is free to use whatever size it wants, as long as the types 
+behave as you declared them. The width and ranges of these integer types vary widely, as 
+shown in this table:
+</p>
+<table>
+	<tr>
+	<th>Name</th>
+	<th>Meomory Size in Bits</th>
+	<th>Range</th>
+	</tr>
+
+	<tr>
+	<td><b>long</b></td>
+	<td>64</td>
+	<td> -9223373036854775808 to 9223372036854775807 </td>
+	</tr>
+
+	<tr>
+	<td><b>int</b></td>
+	<td>32</td>
+	<td> –2147483648 to 2147483647 </td>
+	</tr>
+
+	<tr>
+	<td><b>short</b></td>
+	<td>16</td>
+	<td> –32768  to –32768 </td>
+	</tr>
+
+	<tr>
+	<td><b>byte</b></td>
+	<td>8</td>
+	<td> -128  to 127 </td>
+	</tr>
+</table>
+<h3><strong>byte</strong></h3>
+<p>The smallest integer type is <b>byte.</b> This is a signed 8-bit type that has a range from –128 to 127. Variables of type<b> byte</b> are especially useful when you’re working with a stream of data from a network or file. They are also useful when you’re working with raw binary data that may not be directly compatible with Java’s other built-in types</p>
+<p>Byte variables are declared by use of the byte keyword.<br>
+<b>Syntax :-</b> byte VariableName;</br>
+Example :- short s;
+</p>
+
+<h3><strong>short</strong></h3>
+<p><b>short</b> is a signed 16-bit type. It has a range from –32,768 to 32,767. It is probably the leastused Java type. Here are some examples of<b> short </b>variable declarations:</p>
+<b>Syntax :-</b> short VariableName;</br>
+Example :- short s;
+</p>
+
+<h3><strong>int</strong></h3>
+<p>The most commonly used integer type is <b>int.</b> It is a signed 32-bit type that has a range from –2,147,483,648 to 2,147,483,647. In addition to other uses, variables of type <b>int</b> are commonly employed to control loops and to index arrays. Although you might think that using a <b>byte </b> or <b>short </b> would be more efficient than using an int in situations in which the larger range of an <b>int</b> is not needed, this may not be the case. The reason is that when <b>byte </b> and <b>short</b> values are used in an expression, they are <i>promoted </i> to <b>int </b> when the expression is evaluated. (Type promotion is described later in this chapter.) Therefore, <b>int </b>is often the best choice when an integer is needed</p>
+<b>Syntax :-</b> int VariableName;</br>
+Example :- int s;
+
+<h3><strong>long</strong></h3>
+<p><b>long </b>is a signed 64-bit type and is useful for those occasions where an <b>int </b> type is not large enough to hold the desired value. The range of a <b>long</b> is quite large. This makes it useful when big, whole numbers are needed. For example, here is a program that computes the number of miles that light will travel in a specified number of days</p>
+<b>Syntax :-</b> long VariableName;</br>
+Example :- long s;
+</p>
+
+<h2><strong>Floating-Point Types</strong><br></h2><hr>
+<p>Floating-point numbers, also known as real numbers, are used when evaluating expressions that require fractional precision. For example, calculations such as square root, or transcendentals such as sine and cosine, result in a value whose precision requires a floatingpoint type. Java implements the standard (IEEE–754) set of floating-point types and operators. There are two kinds of floating-point types, <b>float</b> and <b>double,</b> which represent single- and double-precision numbers, respectively. Their width and ranges are shown here: </p>
+<table>
+	<tr>
+	<th>Name</th>
+	<th>Meomory Size in Bits</th>
+	<th>Approximate Range</th>
+	</tr>
+
+	<tr>
+	<td><b>double</b></td>
+	<td>64</td>
+	<td> 4.9e–324 to  1.8e+308 </td>
+	</tr>
+
+	<tr>
+	<td><b>float</b></td>
+	<td>32</td>
+	<td> 1.4e–045 to 3.4e+038 </td>
+	</tr>
+</table>
+
+<h3><strong>float</strong></h3>
+<p>The type <b>float</b> specifies a single-precision value that uses 32 bits of storage. Single precision is faster on some processors and takes half as much space as double precision, but will become imprecise when the values are either very large or very small. Variables of type float are useful when you need a fractional component, but don’t require a large degree of precision. 
+For example, <b>float</b> can be useful when representing dollars and cents.</p>
+<b>Syntax :-</b> float VariableName;</br>
+Example :- float s;
+</p>
+
+<h3><strong>double</strong></h3>
+<p>Double precision, as denoted by the <b>double</b> keyword, uses 64 bits to store a value. Double precision is actually faster than single precision on some modern processors that have been optimized for high-speed mathematical calculations. All transcendental math functions, such as <b>sin( ), cos( ),</b> and <b>sqrt( ),</b> return double values. When you need to maintain accuracy over manyiterative calculations, or are manipulating large-valued numbers, double is the best choice.</p>
+<b>Syntax :-</b> double VariableName;</br>
+Example :- double s;
+</p>
+
+<h2><strong>Characters</strong><br></h2><hr>
+<h3><strong>char</strong></h3>
+<p>The char data type is a single 16-bit Unicode character. Its value-range lies between '\u0000' (or 0) to '\uffff' (or 65,535 inclusive).The char data type is used 
+to store characters.</p>
+<b>Syntax :-</b> char VariableName;</br>
+Example :- char s;
+
+<h2><strong>Booleans</strong><br></h2><hr>
+<p>Java has a primitive type, called <b>boolean,</b> for logical values. It can have only one of two possible values, <b>true</b> or <b>false.</b> This is the type returned by all relational operators, as in the case of <b>a < b. boolean</b> is also the type required by the conditional expressions that govern the control statements such as <b>if </b>and <b>for loop.</b></p>
+
+<h2><strong>Variables</strong><br></h2><hr>
+<p>The variable is the basic unit of storage in a Java program. A variable is defined by the combination of an identifier, a type, and an optional initializer. In addition, all variables have a scope, which defines their visibility, and a lifetime. These elements are examined next</br>
+
+<h3><strong>Declaring a Variables</strong><br></h3><hr>
+<b>Syntax :-</b><i> type <abbr title = " Variables also known as Identifiers">identifier </abbr>= vlaue ;</i></br>
+Example :- int a = 10;
+</p>
+
+<h2><strong>Dynamic Initialization</strong><br></h2><hr>
+<p>Although the preceding examples have used only constants as initializers, Java allows variables to be initialized dynamically, using any expression valid at the time the variable 
+is declared.</br>
+For example, here is a short program that computes the length of the hypotenuse of a right triangle given the lengths of its two opposing sides:</p>
+
+<p>Here, three local variables<b>—a, b,</b> and<b> c—</b>are declared. The first two,<b> a</b> and<b> b,</b> are initialized by constants. However, <b>c</b> is initialized dynamically to the length of the hypotenuse (using the Pythagorean theorem). The program uses another of Java’s built-in methods, <b>sqrt( ), </b>which is a member of the<b> Math</b> class, to compute the square root of its argument. The key point here is that the initialization expression may use any element valid at the time of the initialization, including calls to methods, other variables, or literals</p>
+
+<h3><strong>Scope</strong><br></h3><hr>
+<p>
+<ul>
+	<li><strong> Defination :</strong>The scope of a variable defines the region of the program where the variable is accessible. In Java, there are two primary scopes relevant to methods: class scope and method scope.</li>
+	<li><strong> Class Scope : </strong> Variables declared at the class level are accessible to all methods within that class. These are called fields or member variables. They persist as long as the class instance exists.</li>
+	<li><strong> Method Scope : </strong>Variables declared inside a method are local to that method. This scope begins with the method's opening curly brace { and ends with its closing curly brace }. Method parameters are also part of this scope. </li>
+	<li><strong> Block Scope </strong> Within methods, blocks of code defined by curly braces {} create nested scopes. Variables declared in an inner block are not accessible from outer blocks, but outer variables are accessible from inner blocks.</li>
+</ul>
+</p>
+
+<h3><strong>Lifetime</strong><br></h3><hr>
+<p>
+<ul>
+	<li><strong> Defination :</strong>The lifetime of a variable refers to the duration for which the variable exists in memory and holds its value.</li>
+	<li><strong> Method Scope Lifetime: </strong>Variables declared within a method are created when the method is invoked and destroyed when the method finishes execution. Thus, they do not retain their values between method calls. </li>
+	<li><strong> Block Scope Lifetime: </strong>Variables declared within a block exist only during the execution of that block. They are initialized when the block is entered and destroyed when the block is exited.</li>
+	
+</ul>
+</p>
+
+</body>
+</html>
